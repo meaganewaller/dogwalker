@@ -1,9 +1,10 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import Layout from '../components/Layout'
 
 export default ({data}) => (
 
-  <>
+  <Layout>
   <h1>Locations</h1>
   <p>Check out where you can use DOGWALKER</p>
 
@@ -14,7 +15,7 @@ export default ({data}) => (
       </li>
     ))}
   </ul>
-  </>
+  </Layout>
 )
 
 export const query = graphql`
