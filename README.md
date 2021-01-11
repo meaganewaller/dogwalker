@@ -2,7 +2,7 @@
 
 DOGWALKER is an example application created to illustrate how to use the Gatsby System Route API and a YAML file to generate dynamic routes.
 
-[View the blog post](https://meaganwaller.com/render-dynamic-pages-gatsby-yaml-file)
+[View the blog post](https://meaganwaller.com/render-dynamic-pages-gatsby-file-system-route-api-yaml-file)
 
 ## Branches for Each Section of the Blog Post
 
