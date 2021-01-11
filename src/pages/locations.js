@@ -1,21 +1,30 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
-export default () => (
+export default ({data}) => (
+
   <>
   <h1>Locations</h1>
   <p>Check out where you can use DOGWALKER</p>
 
   <ul>
-    <li>
-      <Link to="/locations/jacksonville">Jacksonville</Link>
-    </li>
-    <li>
-      <Link to="/locations/tampa">Tampa</Link>
-    </li>
-    <li>
-      <Link to="/locations/orlando">Orlando</Link>
-    </li>
+    {data.locations.nodes.map(location => (
+      <li key={location.id}>
+        <Link to={location.nameSlug}>{location.name}</Link>
+      </li>
+    ))}
   </ul>
   </>
 )
+
+export const query = graphql`
+{
+  locations: allLocation {
+    nodes {
+      name
+      nameSlug: gatsbyPath(filePath: "/locations/{Location.name}")
+    }
+  }
+}
+`
+
